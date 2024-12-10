@@ -1,38 +1,22 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import SearchBar from './components/SearchBar';
+
+import Header from './components/Header';
+import Home from './pages/Home';
+import SavedPage from './pages/SavedPage';
 
 function App() {
-  const [data, setData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('colorful');
-  useEffect(() => {
-    // Make the fetch request to your backend (you don't need to include localhost:3000)
-    fetch(`http://localhost:3000/${searchTerm}`)  // Assuming your Node.js API endpoint is /api/data
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => setData(data))
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, [searchTerm]);
-
-
   return (
-    <div className="App">
-      <SearchBar />
-      <div>
-        <p>Default: colorful. Press to Fetch nature</p> <button onClick={() => setSearchTerm('nature')}>Fetch</button>
+    <Router>
+      <div className='App'>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/SavedPage" element={<SavedPage />} />
+        </Routes>
       </div>
-      <div>
-        {data.map((e, i) => {
-          return <img src={e}/>
-        })}
-      </div>
-    </div>
+    </Router>
   );
 }
 

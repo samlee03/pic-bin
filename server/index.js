@@ -69,7 +69,7 @@ app.get('/:searchText', (req, res) => {
   let RETURNED_PHOTOS = [];
 
   // Fetch data from the Flickr API
-  fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${encodeURIComponent(searchText)}&format=json&nojsoncallback=1`)
+  fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${encodeURIComponent(searchText)}&format=json&nojsoncallback=1&sort=interestingness-desc`)
     .then(response => response.json())  // Parse the response to JSON
     .then(data => {
       if (data.photos && data.photos.photo) {
