@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [data, setData] = useState([]);
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <SearchBar />
       <div>
         <p>Default: colorful. Press to Fetch nature</p> <button onClick={() => setSearchTerm('nature')}>Fetch</button>
       </div>
