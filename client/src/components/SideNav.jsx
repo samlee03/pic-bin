@@ -6,11 +6,11 @@ const SideNav = () => {
 
     console.log(SideNavData);
     return (
-        <div className='sidenav'>
-            <ul>
+        <div className='sideNav'>
+            <ul className = 'sideNavList'>
                 {SideNavData.map((val, key) => {
                     return (
-                        <li key={key}>{val.page}</li>
+                        <li key={key} className = 'row'>{val.page}</li>
                     );
                 })}
             </ul>
