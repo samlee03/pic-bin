@@ -1,0 +1,9 @@
+.sidenav {
+    height: 100vh;  /* Full height of the viewport */
+    width: 200px;   /* Width of your sidenav */
+    background-color: #f4f4f4;  /* Background color */
+    position: fixed;  /* Fixed to the left side */
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
