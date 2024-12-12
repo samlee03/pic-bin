@@ -1,18 +1,17 @@
 .SavedPage {
     display: block;
-    /* background-color: red; */
     color: blue;
     width: 90%;
     height:max-content;
-    border: 3px solid RED;
 }
 
 .saved-image{
     width: 200px;
     border-radius: 5px;
     margin: 10px;
+    display: flex;
 }
+
 .saved-image:hover{
     opacity: 0.3;
 }
-

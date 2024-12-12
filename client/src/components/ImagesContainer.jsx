@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import "../styles/ImagesContainer.css"
 import { PinnedContext } from '../App';
+import Logo from "../assets/pin-icon.png"
 
 
 const ImagesContainer = ({data, onClick, isHome}) => {
@@ -37,7 +38,7 @@ const ImagesContainer = ({data, onClick, isHome}) => {
         {data.map((e, i) => {
           return <div className='image-card' key={i}>
             <img src={e} className='images' onClick={() => {navigator.clipboard.writeText(e)}}/>
-            <i className='pin-icon' onClick={() => {handlePin(e)}}>Pin</i>
+            <img src = {Logo} className='pin-icon' onClick={() => {handlePin(e)}}/>
             
           </div>
         })}
