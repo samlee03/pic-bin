@@ -32,7 +32,8 @@ app.post('/db/add_pictures', async (req, res) => {
 
 app.post('/db/remove_pictures', async (req, res) => {
   const { pictureUrl } = req.body;
-  const result = await client.db('project_database').collection('saved_pictures').updateOne({ $pull: { saved: pictureUrl } });  // Pull (remove) the picture URL from the 'saved' array
+  const result = await client.db('project_database').collection('saved_pictures').updateOne({}, { $pull: { saved: pictureUrl } });  // Pull (remove) the picture URL from the 'saved' array
+  res.send(result);
 })
 
 

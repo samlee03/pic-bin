@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import "../styles/ImagesContainer.css"
-const ImagesContainer = ({data}) => {
+import { PinnedContext } from '../App';
+
+
+const ImagesContainer = ({data, onClick, isHome}) => {
+  const pinnedData = useContext(PinnedContext);
+  const { pinned, setPinned } = pinnedData;
+  
+  const handlePin = async (e) => {
+    console.log(e);
+    fetch('http://localhost:3000/db/add_pictures', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        pictureUrl: e,
+      })
+    })
+    .then (response => {
+      if (!response.ok){
+        return;
+      } else {
+        response.json();
+      }
+    })
+    .then (data => {
+      setPinned(data);
+      console.log('attempted to send to dbs');
+    })
+  }
+
   return (
     <div className='images-container'>
         {data.map((e, i) => {
-          return <div key={i}><img src={e}/></div>
+          return <div className='image-card' key={i}>
+            <img src={e} className='images' onClick={() => {navigator.clipboard.writeText(e)}}/>
+            <i className='pin-icon' onClick={() => {handlePin(e)}}>Pin</i>
+            
+          </div>
         })}
     </div>
   )

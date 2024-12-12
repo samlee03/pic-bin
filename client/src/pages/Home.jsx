@@ -8,16 +8,18 @@ const Home = () => {
 
   const [data, setData] = useState([]);
   return (
-    <>
+    <div className='Home'>
       <SearchBar setData = {setData}/>
-      <SideNav/>
       {data.length == 0
       ? 
-        <p className = "loading">Loading...</p> // Maybe add some type of loading content here.
+        <div className='loading'>
+          <p className='loading-text'>Loading Images...</p> 
+
+        </div>
       :
         <ImagesContainer data={data}/>
       }
-    </>
+    </div>
   )
 }
 

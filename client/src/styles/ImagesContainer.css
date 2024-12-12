@@ -16,6 +16,26 @@
   border-radius: 5px;
 }
 
+.image-card {
+  position: relative;
+  /* opacity: 0; */
+}
+.images:hover {
+  transition: .3s ease;
+  -webkit-filter: brightness(75%);
+  cursor: pointer;
+}
+
+.pin-icon{
+  position: absolute;
+  opacity: .5;
+  bottom: 5px;
+  right: 5px;
+  height: 10%;
+  width: 10%;
+  background-color: red;
+}
+
 @media (max-width: 1199px) {
   .images-container {
     columns: 3;

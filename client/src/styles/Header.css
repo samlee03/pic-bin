@@ -1,9 +1,19 @@
 .Header {
-    width: 92.2%;
-    height: 55px;
-    border-bottom: 1px solid black;
+    /* width: 92.2%; */
+    width: 100%;
+    /* background-color: rgb(216, 216, 216); */
+    background-color: white;
+    height: 90px;
+    border-bottom: 1px solid rgb(0, 31, 117);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    margin-left: 200px;
-    padding: 20px;
+    /* margin-bottom: 15px; */
+    /* margin-left: 200px; */
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    z-index: 2;
+}
+
+.logo {
+    height: 80px;
 }

@@ -1,11 +1,13 @@
 .sideNav {
     height: 100vh;
-    width: 200px;
+    width: 10%;
     background-color: #2F4050;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
+    flex-grow: 1;
     padding-top: 20px;
+    z-index: 1;
 }
 
 .sideNavList {

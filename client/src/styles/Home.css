@@ -1,3 +1,9 @@
+.Home {
+    width: 90%;
+    height:max-content;
+    /* margin-left: 10%; */
+}
+
 .loading {
     font-size: 2rem;
     text-align: center;
@@ -7,4 +13,7 @@
     justify-content: center;
     height: 80vh;
     width: 100%;
+}
+.loading-text{
+    font-size: 2rem;
 }

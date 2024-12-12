@@ -3,11 +3,12 @@ import '../styles/SearchBar.css'
 import { useEffect, useState } from 'react';
 
 const SearchBar = ({setData}) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('colorful');
   const [tempSearchTerm, setTempSearchTerm] = useState('');
   useEffect(() => {
-    console.log(searchTerm);
-    console.log("Fetching");
+    // console.log(searchTerm);
+    // console.log("Fetching");
+    setData([]);
     fetch(`http://localhost:3000/${searchTerm}`)  // Assuming your Node.js API endpoint is /api/data
       .then(response => {
         if (!response.ok) {
