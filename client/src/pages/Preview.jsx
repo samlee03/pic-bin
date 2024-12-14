@@ -32,7 +32,7 @@ function Preview() {
     <p>Saved Pictures:</p> 
     {data.saved && data.saved.length > 0 ? ( 
       data.saved.map((e, i) => (
-        <img key={i} src={e} /> 
+        <img className='preview-img' key={i} src={e} /> 
       ))
       ) : (
         <p>No saved pictures found.</p> 

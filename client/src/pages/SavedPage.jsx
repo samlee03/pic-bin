@@ -79,8 +79,8 @@ const SavedPage = () => {
          <img className='saved-image' src={e} onClick={() => handleDelete(e)}/>
         </div>
       })}
-      <button onClick={() => handleShare()}>Share</button>
-      {previewReady? <p>Here's your preview http://localhost:3001/preview/{previewReady}</p> : <></>}
+      <button className='share-btn' onClick={() => handleShare()}>Share</button>
+      {previewReady? <p className='preview-text'>Here's your preview: http://localhost:3001/preview/{previewReady}</p> : <></>}
     </div>
   )
 }

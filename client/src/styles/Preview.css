@@ -1,3 +1,9 @@
 .Preview {
     width: 90%;
+    margin: 10px;
+}
+
+.preview-img {
+    border-radius: 5px;
+    width: 375px;
 }
